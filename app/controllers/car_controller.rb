@@ -1,4 +1,4 @@
-class CarsController < ApplicationController
+class CarController < ApplicationController
   before_action :set_car, only: %I[show]
 
 
@@ -9,7 +9,6 @@ class CarsController < ApplicationController
   def show
   end
 end
-
 
 private
 

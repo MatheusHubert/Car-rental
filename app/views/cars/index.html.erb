@@ -1,0 +1,19 @@
+<h1>All cars for Rent</h1>
+
+<div class="container">
+  <div class="row">
+    <% @cars.each do |car| %>
+      <div class="col-4 my-3">
+        <div class="card text-center">
+          <p> CAR</p>
+          <strong>Model:</strong>
+          <%= car.model %>
+          <strong>Price:</strong>
+          <%= car.price %>
+          <strong>Capacity:</strong>
+          <%= car.seat_number %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
