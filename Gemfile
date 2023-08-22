@@ -79,3 +79,6 @@ end
 
 #ADDED
 gem "devise"
+
+gem 'faker'
+
