@@ -5,7 +5,7 @@
     <% @cars.each do |car| %>
       <div class="col-4 my-3">
         <div class="card text-center">
-          <%= cl_image_tag car.photos.first.key, height: 300, width: 400, crop: :fill %>
+          <%= cl_image_tag car.photos.first.key, height: 180, width: 280, crop: :fill %>
           <p> CAR</p>
           <strong>Model:</strong>
           <%= car.model %>
