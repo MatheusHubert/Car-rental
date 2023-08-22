@@ -1,0 +1,7 @@
+<%= simple_form_for(car) do |f| %>
+  <%= f.input :model %>
+  <%= f.input :price %>
+  <%= f.input :seat_number %>
+  <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+  <%= f.submit %>
+<% end %>
