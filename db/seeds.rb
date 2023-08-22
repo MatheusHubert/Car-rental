@@ -5,18 +5,25 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+require "open-uri"
+
+file = URI.open("https://carwow-uk-wp-3.imgix.net/18015-MC20BluInfinito-scaled-e1666008987698.jpg")
+
 
 require 'faker'
 puts "Delete all cars"
 Car.delete_all
 puts "creating user..."
 
-
 puts "Creating cars..."
 10.times do
-  Car.create(model: Faker::Vehicle.model,
-  price: 100,
-  seat_number: rand(2..8),
-  user_id: 1)
+  car = Car.new(
+    model: Faker::Vehicle.model,
+    price: 100,
+    seat_number: rand(2..8),
+    user_id: 1
+  )
+  car.photo.attach(io: file, filename: "car.png", content_type: "image/png")
+  car.save
 end
 puts "Finished!"
