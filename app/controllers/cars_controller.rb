@@ -1,7 +1,5 @@
 class CarsController < ApplicationController
-  before_action :set_car, only: %i[show]
-
-  def show; end
+  before_action :set_car, only: %I[show]
 
   def new
     @car = Car.new
@@ -15,6 +13,13 @@ class CarsController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
+  end
+
+  def index
+    @cars = Car.all
+  end
+
+  def show
   end
 
   private
