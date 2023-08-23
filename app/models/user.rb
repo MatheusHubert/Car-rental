@@ -5,6 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :cars
   has_many :bookings
-  has_many :cars, through: :bookings
+  has_many :booked_cars, through: :bookings
   validates :first_name, :last_name, presence: true
 end
