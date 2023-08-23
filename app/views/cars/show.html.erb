@@ -1,11 +1,10 @@
-<div class = Details  >
-  <h2> <strong>Model:</strong> Mariaplaats eo , Utrecht <%= @car.model %>
-</h2>
-  <p> <strong>Per hours:</strong> rate: <%= @car.price %></p>
-  <p> <strong>Seating:</strong> <%= @car.seat_number %></p>
+<div class= Details>
+  <h2> <%= @car.address %>, <%= @car.model %></h2>
+  <p>Per hours rate: <%= @car.price %></p>
+  <p> Seating: <%= @car.seat_number %></p>
 </div>
 
-<div class="container">
+<div class="container p-3">
 
   <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
     <div class="carousel-indicators">
@@ -31,8 +30,8 @@
   </div>
 
 <div>
-<h3>Comment</h3>
-<p>As good as a brand-new car. Alloy Rims. All original documents are complete. Non accidental. The original book of this car is also available. Bumper to bumper genuine car. Single handed used.</p>
+  <h2>Description</h2>
+  <p><%= @car.description %></p>
 </div>
   <div class="row">
 

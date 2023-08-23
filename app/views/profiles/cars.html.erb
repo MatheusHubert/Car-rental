@@ -1,25 +1,28 @@
-<div class="container">
-  <h1 class="text-center">All <%= current_user.first_name %>'s cars</h1>
+<div class="container p-3">
+  <h1 class="text-center mt-3">All <%= current_user.first_name %>'s cars</h1>
 
   <div class="container justify-content">
     <div class="row">
       <% @cars.each do |car| %>
         <div class="col-3 my-3">
-          <div class="card-body">
+          <div class="card-body shadow-lg p-3 mb-5 bg-white rounded">
             <div class="card text-center">
 
-            <%= cl_image_tag car.photos.first.key, height: 180, width: 280, crop: :fill, class:"img-thumbnail  mx-auto w-100 " %>
+            <%= cl_image_tag car.photos.first.key, height: 180, width: 280, crop: :fill, class:"img-thumbnail  mx-auto w-100 mb-3" %>
 
-              <p >Honda Civic 2006 VTi Oriel Prosmatec 1.6</p>
+              <p ><strong><%= car.model %></strong></p>
               <div class= " d-flex justify-content-between"> </div>
 
-              <strong>Model:</strong>
-              <%= car.model %>
               <strong>Price:</strong>
               <%= car.price %>
               <strong>Capacity:</strong>
               <%= car.seat_number %>
-              <%= link_to "View", car_path(car.id) %>
+              <%= link_to "View", car_path(car.id), class:"btn btn-success"%>
+              <%= link_to "Delete",
+                profile_path(car.id),
+                data: {turbo_method: :delete, turbo_confirm: "Are you sure?"},
+                class:"btn btn-danger"
+              %>
             </div>
           </div>
         </div>

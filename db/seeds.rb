@@ -8,8 +8,9 @@
 require "open-uri"
 
 require 'faker'
+# Booking.delete_all
 puts "Delete all cars"
-Car.delete_all
+Car.destroy_all
 puts "creating user..."
 
 puts "Creating cars..."
@@ -18,7 +19,9 @@ puts "Creating cars..."
     model: Faker::Vehicle.model,
     price: 100,
     seat_number: rand(2..8),
-    user_id: 1
+    address: Faker::Address.city,
+    description: "As good as a brand-new car. Alloy Rims. All original documents are complete. Non accidental. The original book of this car is also available. Bumper to bumper genuine car. Single handed used.",
+    user_id: rand(1..2)
   )
   urls = [
     "https://pictures.dealer.com/n/newportautocenterbentley/0107/bc4ad99ad8cd7bfd846a67c11e00f186x.jpg",

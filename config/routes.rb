@@ -14,7 +14,8 @@ Rails.application.routes.draw do
   end
   resources :bookings, only: %I[show index]
 
-  resources :profiles, only: %I[show] do
+  resources :profiles, only: %I[show destroy] do
     get "/cars", to: "profiles#cars", as: :cars
+    get "/my_bookings", to: "profiles#my_bookings", as: :bookings
   end
 end
