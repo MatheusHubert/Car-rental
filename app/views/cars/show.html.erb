@@ -8,6 +8,7 @@
 <p>As good as a brand-new car. Alloy Rims. All original documents are complete. Non accidental. The original book of this car is also available. Bumper to bumper genuine car. Single handed used.</p>
 </div>
  <% end %>
+<% if (current_user != @car.user) %>
  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
   Book Now!
   </button>
@@ -15,6 +16,7 @@
   <div class="card card-body">
 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Provident aliquam nostrum doloribus consequatur adipisci, hic soluta mollitia vel impedit rem, nemo, nulla cumque. Ducimus rerum nobis commodi fugit, doloribus modi!  </div>
 </div>
+<% end %>
 
 <%= link_to "View All Car for Rent", root_path  %>
 </div>

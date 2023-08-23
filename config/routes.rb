@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     get '/users/password', to: 'devise/passwords#new'
     get '/users/sign_out', to: 'devise/sessions#destroy'
   end
-  
+
   devise_for :users
 
   resources :cars, except: %I[index] do
@@ -14,4 +14,7 @@ Rails.application.routes.draw do
   end
   resources :bookings, only: %I[show index]
 
+  resources :profiles, only: %I[show] do
+    get "/cars", to: "profiles#cars", as: :cars
+  end
 end
