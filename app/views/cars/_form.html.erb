@@ -4,4 +4,10 @@
   <%= f.input :seat_number %>
   <%= f.input :photos, as: :file, input_html: { multiple: true } %>
   <%= f.submit %>
+
+  <%= f.input :opening_date,
+            as: :string,
+            input_html: { data: { controller: "datepicker" } } %>
+  
+
 <% end %>
