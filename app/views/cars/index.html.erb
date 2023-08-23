@@ -1,20 +1,35 @@
-<div class="container text-center">
-<h1>All cars for Rent</h1>
+<section class="jumbotron text-center" >
 
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= image_url "background-large.jpg" %>');">
+  <h1 class= "jumbotron-heading">All cars for Rent</h1>
+  <p class="lead text-muted">Guaranteed! Book Online Today. Low Cost Rental from Rentalcars.com. No Credit Card Fees. Unbeatable Prices. We Speak Your Language. Types: Economy, Mini, Compact.</p>
+</div>
+
+<%#= image_tag "background-large.jpg", class: "img-fluid", alt: "Background img" %>
+<div class="container justify-content">
   <div class="row">
     <% @cars.each do |car| %>
       <div class="col-3 my-3">
+      <div class="card-body">
         <div class="card text-center">
-          <%= cl_image_tag car.photos.first.key, height: 180, width: 250, crop: :fill %>
-          <p> CAR</p>
+          
+        <%= cl_image_tag car.photos.first.key, height: 180, width: 280, crop: :fill, class:"img-thumbnail  mx-auto w-100 " %>
+
+          <p >Honda Civic 2006 VTi Oriel Prosmatec 1.6</p>
+          <div class= " d-flex justify-content-between"> </div>
+
           <strong>Model:</strong>
           <%= car.model %>
           <strong>Price:</strong>
           <%= car.price %>
           <strong>Capacity:</strong>
           <%= car.seat_number %>
+          <%= link_to "View", car_path(car.id) %>
         </div>
       </div>
+      </div>
     <% end %>
+        </section>
+
   </div>
 </div>
