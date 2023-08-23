@@ -1,22 +1,55 @@
-<nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light" >
-  <%= link_to "Home", root_path, class:"navbar-brand", style:"margin-left: 20px" %>
- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+<%# <nav class="navbar navbar-expand-lg navbar-light bg-light"> %>
+  <%# <%= link_to "Home", root_path, class:"navbar-brand", style:"margin-left: 20px" %>
+ <%# <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> %>
+    <%# <span class="navbar-toggler-icon"></span> %>
+  <%# </button> %>
+
+  <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light d-flex justify-content-between">
+  <a class="navbar-brand" style="margin-left: 20px" href="#">RBnB</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
   <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+    
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
-        <%= link_to "Log-in", user_session_path, class:"nav-link"  %>
+      <li class="nav-item active">
+        <a class="nav-link" style="margin-left: 20px" href="http://localhost:3000/">Home <span class="sr-only">(current)</span></a>
       </li>
+      <li class="nav-item">
+        <%= link_to "Add a Car", new_car_path, class:"nav-link", style:"margin-left: 20px" %>
+      </li>
+      <li class="nav-item dropdown" style="margin-left: 20px">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Dropdown
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <div class="collapse navbar-collapse align-items-right" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
       <% if user_signed_in?  %>
-        <li class="nav-item">
-          <%= link_to "Sign out", destroy_user_session_path, class:"nav-link", style:"border: none;"  %>
-        </li>
-        <li class="nav-item">
-          <%= link_to "Edit Account", edit_user_registration_path, class:"nav-link"  %>
-        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Account Settings
+          </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <%= link_to "Edit Account", edit_user_registration_path, class:"dropdown-item"  %>
+          <div class="dropdown-divider"></div>
+          <%= link_to "Sign out", destroy_user_session_path, class:"dropdown-item", style:"border: none;"  %>
+        </div>
+      </li>
       <% else %>
+        <li class="nav-item">
+          <%= link_to "Log-in", user_session_path, class:"nav-link"  %>
+        </li>
         <li class="nav-item">
           <%= link_to "Sign Up", new_user_registration_path, class:"nav-link"  %>
         </li>
