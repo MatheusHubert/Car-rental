@@ -1,34 +1,50 @@
-<div class="container">
-
-  <% @car.photos.each do |photo| %>
-    <div class="card">
-      <div class="row">
-        <div class="col-sm">
-          <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill  %>
-        </div>
-        <div class="col-sm">
-          <h2>Comment</h2>
-          <p>As good as a brand-new car. Alloy Rims. All original documents are complete. Non accidental. The original book of this car is also available. Bumper to bumper genuine car. Single handed used.</p>
-        </div>
-      </div>
-    </div>
-  <% end %>
+<div class= Details>
   <h2> Mariaplaats eo , Utrecht <%= @car.model %></h2>
   <p>Per hours rate: <%= @car.price %></p>
   <p> Seating: <%= @car.seat_number %></p>
+</div>
 
+<div class="container">
 
-  <div class="row">
-    
-     <% if (current_user != @car.user) %>
-      <div class="col-sm">
-        <%= link_to "Book this car", new_car_booking_path(@car.id), class:"btn btn-success"  %>
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+  <ol class="carousel-indicators">
+    <% @car.photos.each_with_index do |photo, i| %>
+    <li data-target="#carouselExampleIndicators" data-slide-to="<%=i%>" class="active"></li>
+    <% end  %>
+  </ol>
+    <% @car.photos.each do |photo| %>
+      <div class="carousel-item active">
+        <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill, class:"d-block w-100"%>
       </div>
     <% end %>
-      <div class="d-flex col-sm justify-content-end">
-        <%= link_to "View All Car for Rent", root_path, class:"btn btn-success"  %>
-      </div>
 
   </div>
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+
+
+
+<div> <h2>Comment</h2>
+<p>As good as a brand-new car. Alloy Rims. All original documents are complete. Non accidental. The original book of this car is also available. Bumper to bumper genuine car. Single handed used.</p>
+</div>
+  <% if (current_user != @car.user) %>
+   <button class="btn btn-info" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+    Book Now!
+   </button>
+  <% end %>
+  <div class="collapse" id="collapseExample">
+  <div class="card card-body">
+Lorem ipsum dolor sit amet consectetur, adipisicing elit. Provident aliquam nostrum doloribus consequatur adipisci, hic soluta mollitia vel impedit rem, nemo, nulla cumque. Ducimus rerum nobis commodi fugit, doloribus modi!  </div>
+</div>
+
+<%= link_to "View All Car for Rent" , root_path , class: "btn btn-success"  %>
 
 </div>
