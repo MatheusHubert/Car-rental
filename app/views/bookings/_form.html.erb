@@ -1,5 +1,5 @@
  <h2>New booking</h2>
-<%= simple_form_for(Booking.new) do |f| %>
+<%= simple_form_for [@car, @booking] do |f| %>
   <%= f.input :start_date , as: :string,
     input_html: { data: { controller: "datepicker" } } %>
   <%= f.input :end_date, as: :string,

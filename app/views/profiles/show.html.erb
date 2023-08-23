@@ -1,0 +1,11 @@
+<div class="container">
+  <h1 class="text-center"><%= current_user.first_name %> <%= current_user.last_name %>'s profile</h1>
+
+  <div>
+    <h2>Account Details</h2>
+    <p>Email: <%= current_user.email %></p>
+    <p>Number of cars: <%= current_user.cars.count %></p>
+  </div>
+
+  <%= link_to "View my cars", profile_cars_path(current_user.id) %>
+</div>
