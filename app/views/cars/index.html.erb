@@ -1,11 +1,11 @@
+<div class="container text-center">
 <h1>All cars for Rent</h1>
 
-<div class="container">
   <div class="row">
     <% @cars.each do |car| %>
-      <div class="col-4 my-3">
+      <div class="col-3 my-3">
         <div class="card text-center">
-          <%= cl_image_tag car.photos.first.key, height: 180, width: 280, crop: :fill %>
+          <%= cl_image_tag car.photos.first.key, height: 180, width: 250, crop: :fill %>
           <p> CAR</p>
           <strong>Model:</strong>
           <%= car.model %>
