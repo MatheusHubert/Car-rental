@@ -2,11 +2,8 @@
   <%= f.input :model %>
   <%= f.input :price %>
   <%= f.input :seat_number %>
-  <%= f.input :photos, as: :file, input_html: { multiple: true } %>
   <%= f.input :address %>
   <%= f.input :description %>
-  <%= f.input :opening_date,
-            as: :string,
-            input_html: { data: { controller: "datepicker" } } %>
+  <%= f.input :photos, as: :file, input_html: { multiple: true } %>
   <%= f.submit class:"btn btn-success"%>
 <% end %>
