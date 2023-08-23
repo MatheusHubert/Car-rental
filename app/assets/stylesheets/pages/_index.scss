@@ -1,2 +1,21 @@
 // Import page-specific CSS files here.
 @import "home";
+
+.jumbotron-heading {
+  font-weight: 600;
+}
+
+.h1 {
+  font-size: 2.5rem;
+}
+
+.lead {
+  font-size: 1.25rem;
+  font-weight: 300;
+  text-align: center;
+}
+
+.jumbotron {
+  padding-top: 50px;
+  padding-bottom: 30px;
+}
