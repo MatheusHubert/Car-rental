@@ -16,6 +16,7 @@
 .jumbotron {
   padding-top: 50px;
   padding-bottom: 30px;
+
 }
 
 .banner {
@@ -55,6 +56,9 @@
 // background-image: url("bluebackground.avif");
 background-color: lightgray;
 opacity: 0.9;
+color: #518ecb;
+font-size: 32px;
+padding-top: 10px;
 }
 
 .showbigcards{
@@ -108,7 +112,7 @@ margin-right: 60px;
   color: #FFFFFF;
   cursor: pointer;
   display: inline-block;
-  font-family: -apple-system,system-ui,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  font-family: -apple-system, system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   font-size: 16px;
   font-weight: 500;
   line-height: 2.5;
@@ -129,4 +133,8 @@ margin-right: 60px;
 
 .button-62:not([disabled]):hover {
   box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(39, 37, 173, 0.5), .125rem .125rem 1rem rgba(84, 143, 232, 0.5);
+}
+
+.index-css {
+  color: #5fa8d3;
 }
