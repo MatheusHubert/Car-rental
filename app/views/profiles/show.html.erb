@@ -1,10 +1,42 @@
-<div class="container p-3">
-  <h1 class="text-center"><%= current_user.first_name %> <%= current_user.last_name %>'s profile</h1>
-  <div>
-    <h2>Account Details</h2>
-    <p>Email: <%= current_user.email %></p>
-    <p>Number of cars: <%= current_user.cars.count %></p>
-  </div>
-  <%= link_to "View My Bookings", profile_bookings_path(current_user.id), class:"btn btn-warning"%>
-  <%= link_to "View My Cars" , profile_cars_path(current_user.id), class:"btn btn-success" %>
+<section>
+ <div class="container account-box">
+    <div class="row align-self-start">
+    <div class="col order-last">
+        <div class="card">
+    <div class="card-header">
+    <strong>Total cars</strong>
+    </div>
+    <div class="card-body">
+    <h5 class="card-title"><p><%= current_user.cars.count %></p></h5>
+    </div>
+    </div>
 </div>
+
+
+
+  <div class="col">
+      <div class="card">
+    <div class="card-header">
+    <strong>Account details</strong>
+    </div>
+    <div class="card-body">
+    <h5 class="card-title"><%= link_to "Scheduled bookings", profile_bookings_path(current_user.id), class:" btn btn-primary btn-small mt5 view-b "%>
+      <%= link_to "View cars" , profile_cars_path(current_user.id), class:"view-b col btn btn-primary btn-small mt5" %></h5>
+    </div>
+    </div>
+  </div>
+
+<div class="col order-first">
+    <div class="col order-last">
+    <div class="card">
+    <div class="card-header">
+    <strong>My prfile</strong>
+     </div>
+  <div class="card-body">
+    <h5 class="card-title"> <p>Email: <%= current_user.email %></p></h5>
+  </div>
+  </div>
+</div>
+
+
+</section>

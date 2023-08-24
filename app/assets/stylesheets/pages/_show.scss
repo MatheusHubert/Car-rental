@@ -10,19 +10,28 @@
 
 }
 
-.carousel-inner {
-}
+.carousel-inner {}
 
-.block-title{
+.block-title {
   justify-content: space-between;
 }
 
-.block-share-save{
-padding-left: 43px;
+.block-share-save {
+  padding-left: 43px;
 }
 
-.mapcard{
-  border-width: medium;
-  border-style: solid;
-  border-color: #00f;
+.account-box {
+  margin-top: 250px;
+  margin-bottom: 200px;
 }
+
+.welcome-color {
+  background-color: azure;
+}
+
+.view-b {
+  background-color: #518ecb;
+  color: ivory;
+  text-align: end;
+}
+
