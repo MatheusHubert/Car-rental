@@ -1,49 +1,79 @@
-<div class= Details>
-  <h2> <%= @car.address %>, <%= @car.model %></h2>
-  <p>Per hours rate: <%= @car.price %></p>
-  <p> Seating: <%= @car.seat_number %></p>
-</div>
+<div class="d-flex justify-content-center" style="height: 110vh;">
 
-<div class="container p-3">
+ <div class="card w-75 shadow-lg justify-content-center align-itens-center">
 
-  <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
-    <div class="carousel-indicators">
-      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-    </div>
-    <div class="carousel-inner">
-      <% @car.photos.each_with_index do |photo, i| %>
-        <div class="carousel-item <%= 'active' if i == 0 %>">
-          <%= cl_image_tag photo.key, crop: :fill, class:"d-flex w-100"%>
+
+    <div class="d-flex block-title p-3 w-100">
+      <div class="block-share-save">
+        <div class="d-block">
+          <i class="fa-regular fa-share-from-square " style="color: #050505;"></i>
+          <%= link_to "Share this car", root_path, class:"text-decoration-none text-dark"  %>
         </div>
-      <% end %>
+        <div class="d-block justify-content-center pt-3">
+          <i class="fa-regular fa-heart " style="color: #000000;"></i>
+          <%= link_to "Save this car",root_path, class:"text-decoration-none text-dark"  %>
+        </div>
+      </div>
+
+      <div class="text-center mx-5">
+        <h1><%= @car.model %></h1>
+        <p> <%= @car.address %></p>
+      </div>
+
+      <div class="d-block text-end mx-5">
+        <p>For up to <b>€<%= @car.price%></b> an hour </p>
+        <p>Car for <%= @car.seat_number %> peoples</p>
+      </div>
     </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
-  </div>
 
-<div>
-  <h2>Description</h2>
-  <p><%= @car.description %></p>
-</div>
-  <div class="row">
 
-     <% if (current_user != @car.user) %>
-      <div class="col-sm">
-        <%= link_to "Book this car", new_car_booking_path(@car.id), class:"btn btn-warning"  %>
+
+    <div class="p-3 mx-auto d-block" style="width: 50rem; height: 35rem;">
+      <div id="carouselExampleIndicators" class="carousel mx-auto d-block slide " data-bs-ride="true" style="width: 500px; heigth: 500px">
+
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+
+        <div class="carousel-inner">
+          <% @car.photos.each_with_index do |photo, i| %>
+            <div class="carousel-item <%= 'active' if i == 0 %>">
+              <%= cl_image_tag photo.key, crop: :fill, class:"w-100"%>
+            </div>
+          <% end %>
+        </div>
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
       </div>
-    <% end %>
-      <div class="d-flex col-sm justify-content-end">
-        <%= link_to "View All Car for Rent", root_path, class:"btn btn-success "   %>
+
+      <br/>
+
+      <div>
+        <h2 >Car description</h2>
+        <p><%= @car.description %></p>
+      </div>
+      
+
+      <div class="row">
+        <% if (current_user != @car.user) %>
+          <div class="d-flex col-sm justify-content-start">
+            <%= link_to "Book this car", new_car_booking_path(@car.id), class:"btn btn-warning"  %>
+          </div>
+        <% end %>
+          <div class="d-flex col-sm justify-content-end">
+            <%= link_to "View All Car for Rent", root_path, class:"btn btn-success "   %>
+          </div>
       </div>
 
+    </div>
   </div>
-
 </div>

@@ -17,9 +17,9 @@ puts "Creating cars..."
 10.times do
   car = Car.new(
     model: Faker::Vehicle.model,
-    price: 100,
+    price: rand(100.0..200.0),
     seat_number: rand(2..8),
-    address: Faker::Address.city,
+    address: Faker::Address.street_address,
     description: "As good as a brand-new car. Alloy Rims. All original documents are complete. Non accidental. The original book of this car is also available. Bumper to bumper genuine car. Single handed used.",
     user_id: rand(1..2)
   )
