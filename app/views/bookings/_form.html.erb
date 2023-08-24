@@ -10,13 +10,13 @@
 
       <div class="d-flex justify-content-between">
         <%= f.submit %>
-        <%= button_tag "more", type: "button", data: { action: "click->toggle#fire" }, class: "btn btn-success" %>
+        <%= button_tag "Calculate Price", type: "button", data: { action: "click->toggle#fire" }, class: "btn btn-success" %>
       </div>
     <% end %>
     <div class="card bg-orange">
       <div class="d-none" data-toggle-target="togglableElement">
         <br/>
-        <p class="d-flex justify-content-center p-3">PAY HERE</p>
+        <p class="d-flex justify-content-center p-3" data-toggle-target="priceText"></p>
       </div>
   </div>
 </div>

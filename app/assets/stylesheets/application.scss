@@ -12,3 +12,14 @@
 @import "pages/index";
 @import "pages/footer";
 @import "pages/show";
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.footer {
+  margin-top: auto;
+}
+
