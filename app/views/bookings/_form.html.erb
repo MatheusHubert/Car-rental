@@ -1,6 +1,7 @@
+<section class= "body">
  <div class="card col-6 shadow-lg p-3 mb-5 bg-white rounded" style="width: 50rem; margin: auto; border-radius: 5px;">
   <div class="card-body" data-controller="toggle">
-    <h2>New booking</h2>
+    <h2>Book your Car</h2>
     <%= simple_form_for [@car, @booking] do |f| %>
       <%= f.input :start_date , as: :string,
         input_html: { data: { controller: "datepicker" } } %>
@@ -12,11 +13,16 @@
         <%= button_tag "more", type: "button", data: { action: "click->toggle#fire" }, class: "btn btn-success" %>
       </div>
     <% end %>
-    <div class="card">
+    <div class="card bg-orange">
       <div class="d-none" data-toggle-target="togglableElement">
         <br/>
         <p class="d-flex justify-content-center p-3">PAY HERE</p>
       </div>
-    <div>
   </div>
 </div>
+
+<div data-toggle-target="togglableElement" class="d-none">
+  <button data-action="click->toggle#fire" class="btn btn-outline-primary">Add a new monument</button>
+</div>
+
+</section>
