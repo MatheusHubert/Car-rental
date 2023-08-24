@@ -47,34 +47,61 @@
   border-radius: 4px;
   background: #670BFF;
 }
-
-
-.All-cars {
-  color: #518ecb;
-  font-size: 32px;
-  padding-top: 10px;
-
+.texttitle {
+  padding-top: 30px;
+  font-size: 60px;
 }
 
-.carousel {
-  margin-top: 10px;
+.cardpage{
+// background-image: url("bluebackground.avif");
+background-color: lightgray;
+opacity: 0.9;
+color: #518ecb;
+font-size: 32px;
+padding-top: 10px;
 }
 
-.showup {
+.showbigcards{
+display: grid;
+grid-template-columns: auto auto auto auto;
+justify-content: space-between;
+margin-left: 60px;
+margin-right: 60px;
+}
+
+.showsmallcards {
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  padding: 20px;
+  margin: 18px;
   border-radius: 10px;
+  overflow: hidden;
 }
 
-.showup :hover {}
+.showsmallcards:hover {
+  box-shadow: 10px 10px 15px 0px rgb(55, 51, 51);
+}
 
-.img-config {
-  border-radius: 10px;
-  box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(39, 37, 173, 0.5), .125rem .125rem 1rem rgba(84, 143, 232, 0.5);
+.carimage {
+  display: block;
+  justify-content: center;
+  padding-right: 25px;
+
+}
+
+.cardtext {
+  display: flex;
+  padding-right: 20px;
+  padding-left: 20px;
+  justify-content: space-between;
+}
+
+.cardprice {
+  text-shadow: rgb(157, 128, 13) 1px 0 10px;
 }
 
 
-.btn-config {
-  border-radius: 10px;
-}
 
 
 /* CSS */
