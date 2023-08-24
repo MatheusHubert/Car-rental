@@ -2,7 +2,7 @@
 import { Controller } from "@hotwired/stimulus"
 
 export default class extends Controller {
-  static targets = ["togglableElement"]
+  static targets = ["togglableElement", "priceText"]
 
   connect() {
     console.log("connect")
@@ -10,5 +10,6 @@ export default class extends Controller {
 
   fire() {
     this.togglableElementTarget.classList.toggle("d-none");
+    this.priceTextTarget.innerText
   }
 }

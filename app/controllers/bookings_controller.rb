@@ -8,6 +8,8 @@ class BookingsController < ApplicationController
   def new
     @booking = Booking.new
     @car = Car.find(params[:car_id])
+    @price = 0
+    @price = ((params[:end_date] - params[:start_date]).to_i * @car.price) unless params[:start_date].nil?
   end
 
   def create
