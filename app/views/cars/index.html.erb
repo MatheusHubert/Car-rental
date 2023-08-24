@@ -21,11 +21,11 @@
 
   <div class="row bg-white ">
       <% @cars.each do |car| %>
-        <div class="col-3 my-3">
+        <div class="col-3 my-3 showup">
           <div class="">
             <div class=" shadow-lg p-3 mb-5 bg-white">
               <div class="text-center">
-              <%= cl_image_tag car.photos.first.key, height: 180, width: 280, crop: :fill, class:"img-config img-thumbnail  mx-auto w-100 mb-3 " %>
+                <%= cl_image_tag car.photos.first.key, height: 180, width: 280, crop: :fill, class:"img-config img-thumbnail  mx-auto w-100 mb-3 "%>
               <p class="h4"><strong><%= car.model %></strong></p>
                 <div class="d-flex justify-content-between">
                   <div class="m-3">
@@ -44,4 +44,3 @@
   </div>
 </div>
 </section>
-<!-- HTML !-->
