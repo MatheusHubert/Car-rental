@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  before_action :set_booking, only: %I[show]
+  before_action :set_booking, only: %I[show destroy]
 
   def index
     @bookings = Booking.all
@@ -23,7 +23,11 @@ class BookingsController < ApplicationController
     end
   end
 
-  def show
+  def show; end
+
+  def destroy
+    @booking.destroy
+    redirect_to profile_bookings_path(current_user.id)
   end
 
   private

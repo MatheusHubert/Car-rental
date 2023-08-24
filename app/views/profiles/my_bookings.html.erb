@@ -19,6 +19,11 @@
               <strong>Car Owner:</strong>
               <%= booking.car.user.first_name %> <%= booking.car.user.last_name %>
               <%= link_to "View", car_path(booking.car.id), class:"btn btn-success"%>
+              <%= link_to "Delete",
+                booking_path(booking.id),
+                data: {turbo_method: :delete, turbo_confirm: "Are you sure?"},
+                class:"btn btn-danger"
+              %>
             </div>
           </div>
         </div>
