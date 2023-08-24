@@ -13,16 +13,10 @@
   text-align: center;
 }
 
-.jumbotron {
-  padding-top: 50px;
-  padding-bottom: 30px;
-
-}
-
 .banner {
   background-size: cover;
   background-position: center;
-  padding: 150px 0;
+  padding: 70px;
 }
 
 .banner h1 {
@@ -31,7 +25,6 @@
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
   font-size: 32px;
   font-weight: bold;
-
 }
 
 .banner p {
@@ -41,21 +34,15 @@
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
 }
 
-.btn-flat {
-  color: white;
-  padding: 8px 24px;
-  border-radius: 4px;
-  background: #670BFF;
-}
 .texttitle {
   padding-top: 30px;
   font-size: 60px;
 }
 
 .cardpage{
-// background-image: url("bluebackground.avif");
-background-color: lightgray;
+background-image: url("greybackground.avif");
 opacity: 0.9;
+background-size: cover;
 }
 
 .showbigcards{
@@ -78,13 +65,15 @@ margin-right: 60px;
 
 .showsmallcards:hover {
   box-shadow: 10px 10px 15px 0px rgb(55, 51, 51);
+  transition-delay: 0.2s;
+
 }
 
 .carimage {
+  max-width: 100%;
   display: block;
   justify-content: center;
-  padding-right: 25px;
-
+  object-fit: cover;
 }
 
 .cardtext {
@@ -98,11 +87,40 @@ margin-right: 60px;
   text-shadow: rgb(157, 128, 13) 1px 0 10px;
 }
 
+/* CSS BUTTONS*/
 
+.button-1 {
+  background: linear-gradient(to bottom right, #5b47ef, #5a60ff);
+  border: 0;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system, system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 2.5;
+  outline: transparent;
+  padding: 0 1rem;
+  text-align: center;
+  text-decoration: none;
+  transition: box-shadow .2s ease-in-out;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+}
 
+.button-1:not([disabled]):focus {
+  box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(39, 37, 173, 0.5), .125rem .125rem 1rem rgba(84, 143, 232, 0.5);
+}
 
-/* CSS */
-.button-62 {
+.button-1:not([disabled]):hover {
+  box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(39, 37, 173, 0.5), .125rem .125rem 1rem rgba(84, 143, 232, 0.5);
+}
+
+// ---------------
+
+.button-2 {
   background: linear-gradient(to bottom right, #5b47ef, #5a60ff);
   border: 0;
   border-radius: 12px;
@@ -124,14 +142,102 @@ margin-right: 60px;
   white-space: nowrap;
 }
 
-.button-62:not([disabled]):focus {
+.button-2:not([disabled]):focus {
   box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(39, 37, 173, 0.5), .125rem .125rem 1rem rgba(84, 143, 232, 0.5);
 }
 
-.button-62:not([disabled]):hover {
+.button-2:not([disabled]):hover {
   box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(39, 37, 173, 0.5), .125rem .125rem 1rem rgba(84, 143, 232, 0.5);
 }
 
-.index-css {
-  color: #5fa8d3;
+
+
+//  ----------- RESPONSIVE -------------
+
+
+@media (max-width: 1390px){
+
+  .showbigcards{
+  grid-template-columns: auto auto auto;
+  margin-left: 100px;
+  margin-right: 100px;
+  }
+}
+
+@media (max-width: 1100px){
+  .carimage {
+    width: 250px;
+    height: auto;
+  }
+}
+
+@media (max-width: 1000px){
+  .cardtext {
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+
+  .showbigcards{
+    margin-left: 10px;
+    margin-right: 10px;
+    }
+}
+
+@media (max-width: 830px){
+  .showbigcards{
+    margin-left: 10px;
+    margin-right: 10px;
+    }
+
+  .cardtext {
+    padding-right: 5px;
+    padding-left: 5px;
+  }
+}
+
+
+@media (max-width: 800px){
+  .showbigcards{
+  grid-template-columns: auto auto;
+  margin-left: 90px;
+  margin-right: 90px;
+  }
+
+  .carimage {
+    display: block;
+    justify-content: center;
+    margin-left: 5px;
+    width: 180px;
+    height: auto;
+  }
+
+  .cardtext {
+    display: block;
+    padding-right: 20px;
+    padding-left: 20px;
+    justify-content: space-between;
+  }
+}
+
+@media (max-width: 600px){
+  .showbigcards{
+    display: grid;
+    grid-template-columns: auto;
+    justify-content: center;
+    margin-left: 30px;
+    margin-right: 30px;
+    }
+
+  .carimage {
+    display: block;
+    justify-content: center;
+    margin-left: 5px;
+    width: 300px;
+    height: auto;
+  }
+
+  .texttitle {
+    padding-top: 30px;
+    font-size: 45px;
+  }
 }
