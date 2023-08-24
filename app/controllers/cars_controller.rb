@@ -1,6 +1,10 @@
 class CarsController < ApplicationController
   before_action :set_car, only: %I[show]
 
+  def index
+    @cars = Car.all
+  end
+
   def new
     @car = Car.new
 
@@ -16,11 +20,15 @@ class CarsController < ApplicationController
     end
   end
 
-  def index
-    @cars = Car.all
-  end
 
-  def show; end
+  def show
+
+    @markers = [{
+        lat: @car.latitude,
+        lng: @car.longitude,
+      }]
+    
+  end
 
   private
 
