@@ -54,15 +54,12 @@
           <span class="visually-hidden">Next</span>
         </button>
       </div>
-
       <br/>
 
       <div>
         <h2 >Car description</h2>
         <p><%= @car.description %></p>
       </div>
-
-
       <div class="row">
         <% if (current_user != @car.user) %>
           <div class="d-flex col-sm justify-content-start">
@@ -73,7 +70,8 @@
             <%= link_to "View All Car for Rent", root_path, class:"btn btn-success justify"   %>
           </div>
       </div>
-
     </div>
   </div>
+</div>
+
 </div>
