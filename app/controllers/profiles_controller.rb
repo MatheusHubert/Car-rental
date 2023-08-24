@@ -5,9 +5,7 @@ class ProfilesController < ApplicationController
     @cars = current_user.cars
   end
 
-  def my_bookings
-    
-  end
+  def my_bookings; end
 
   def destroy
     @car = Car.find(params[:id])

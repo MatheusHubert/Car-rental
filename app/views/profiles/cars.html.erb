@@ -18,6 +18,7 @@
               <strong>Capacity:</strong>
               <%= car.seat_number %>
               <%= link_to "View", car_path(car.id), class:"btn btn-success"%>
+              <%= link_to "Edit", edit_car_path(car.id), class:"btn btn-primary" %>
               <%= link_to "Delete",
                 profile_path(car.id),
                 data: {turbo_method: :delete, turbo_confirm: "Are you sure?"},
@@ -30,3 +31,4 @@
     </div>
   </div>
 </div>
+`

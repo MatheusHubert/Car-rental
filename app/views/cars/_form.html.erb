@@ -3,7 +3,14 @@
   <%= f.input :price %>
   <%= f.input :seat_number %>
   <%= f.input :address %>
-  <%= f.input :description %>
-  <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+  <%= f.input :description, :as => :text, :input_html => { 'rows' => 7}  %>
+  <% if car.persisted? %>
+  <%= f.input :photos, as: :file,
+          input_html: { multiple: true },
+          hint:"Don't upload if you aren't adding photos",
+          required: false %>
+  <% else %>
+    <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+  <% end %>
   <%= f.submit class:"btn btn-success"%>
 <% end %>
