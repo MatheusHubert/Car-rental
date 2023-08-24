@@ -1,5 +1,10 @@
 class CarsController < ApplicationController
   before_action :set_car, only: %I[show edit update]
+  
+    def index
+    @cars = Car.all
+    @cars = Car.search(params[:query]) if params[:query].present?
+  end
 
   def new
     @car = Car.new
@@ -15,12 +20,14 @@ class CarsController < ApplicationController
     end
   end
 
-  def index
-    @cars = Car.all
-    @cars = Car.search(params[:query]) if params[:query].present?
-  end
+  def show
 
-  def show; end
+    @markers = [{
+        lat: @car.latitude,
+        lng: @car.longitude,
+      }]
+    
+  end
 
   def edit; end
 
