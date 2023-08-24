@@ -1,12 +1,12 @@
 <section class= "body">
  <div class="card col-6 shadow-lg p-3 mb-5 bg-white rounded" style="width: 50rem; margin: auto; border-radius: 5px;">
-  <div class="card-body" data-controller="toggle">
+  <div class="card-body" data-controller="toggle" data-toggle-price-value="<%= @booking.car.price %>">
     <h2>Book your Car</h2>
     <%= simple_form_for [@car, @booking] do |f| %>
       <%= f.input :start_date , as: :string,
-        input_html: { data: { controller: "datepicker" } } %>
+        input_html: { data: { controller: "datepicker", action: "change->toggle#setStartDate" } } %>
       <%= f.input :end_date, as: :string,
-        input_html: { data: { controller: "datepicker" } } %>
+        input_html: { data: { controller: "datepicker", action: "change->toggle#setEndDate" } } %>
 
       <div class="d-flex justify-content-between">
         <%= f.submit %>
