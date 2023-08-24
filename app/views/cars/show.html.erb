@@ -1,36 +1,34 @@
-<div class="d-flex justify-content-center" style="height: 110vh;">
-
- <div class="card w-75 shadow-lg justify-content-center align-itens-center">
-
-
-    <div class="d-flex block-title p-3 w-100">
-      <div class="block-share-save">
-        <div class="d-block">
+<div class="d-flex block-title p-3 w-100">
+<div class="flash flash-success alert alert-dismissible fade show" role="alert">
+  <span><strong>Yay!</strong> 🎉 Free cancellation up to 48 hours before pick-up.</span>
+  <a data-bs-dismiss="alert" aria-label="Close">
+    <i class="fas fa-times"></i>
+  </a>
+</div>
+  <div class="block-share-save">
+    <div class="d-block">
           <i class="fa-regular fa-share-from-square " style="color: #050505;"></i>
-          <%= link_to "Share this car", root_path, class:"text-decoration-none text-dark"  %>
-        </div>
+          <%= link_to "Share this car", root_path, class:"text-decoration-none color-css"  %>
+      </div>
         <div class="d-block justify-content-center pt-3">
           <i class="fa-regular fa-heart " style="color: #000000;"></i>
-          <%= link_to "Save this car",root_path, class:"text-decoration-none text-dark"  %>
-        </div>
+          <%= link_to "Save this car",root_path, class:"text-decoration-none color-css"  %>
       </div>
+      </div>
+       
 
-      <div class="text-center mx-5">
+      <div class="text-center mx-5 color-css">
         <h1><%= @car.model %></h1>
         <p> <%= @car.address %></p>
       </div>
 
-      <div class="d-block text-end mx-5">
+      <div class="d-block text-end mx-5 color-css">
         <p>For up to <b>€<%= @car.price%></b> a day </p>
         <p>Car for <%= @car.seat_number %> peoples</p>
       </div>
     </div>
 
-
-
     <div class="row p-3 mx-auto" style="width: 50rem; height: 35rem;">
-
-
       <div id="carouselExampleControls" class="col d-flex carousel slide" data-ride="carousel" style="width: 100%; height: 300px;">
         <div class="carousel-inner">
           <div class="carousel-inner">
@@ -52,25 +50,25 @@
       </div>
 
 
-      <div class="col map-style rounded-circle" style="width: 100%; height: 300px;"
+      <div class="col map-style" style="width: 100%; height: 300px;"
           data-controller="map"
           data-map-markers-value="<%= @markers.to_json %>"
           data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
       </div>
       <br/>
 
-      <div>
-        <h2 >Car description</h2>
+      <div class= color-css>
+        <h2>Car description</h2>
         <p><%= @car.description %></p>
       </div>
       <div class="row">
         <% if (current_user != @car.user) %>
           <div class="d-flex col-sm justify-content-start">
-            <%= link_to "Book this car", new_car_booking_path(@car.id), class:"btn btn-warning"  %>
+            <%= link_to "Book this car", new_car_booking_path(@car.id), class:"btn btn-info"  %>
           </div>
         <% end %>
           <div class="d-flex col-sm justify-content-end">
-            <%= link_to "View All Car for Rent", root_path, class:"btn btn-success justify"   %>
+            <%= link_to "View All Car for Rent", root_path, class:"btn btn-flat justify"   %>
           </div>
       </div>
     </div>

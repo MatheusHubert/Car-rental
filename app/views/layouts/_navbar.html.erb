@@ -1,5 +1,5 @@
   <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light d-flex justify-content-between">
-  <a class="navbar-brand" style="margin-left: 20px" href="">SmartRBnB</a>
+  <a class="navbar-brandcss-nav " style="margin-left: 20px" href="">SmartRBnB</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -8,11 +8,11 @@
 
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <%= link_to "Home", root_path, class:"nav-link", style:"margin-left: 20px" %>
+        <%= link_to "Home", root_path, class:"nav-link css-nav", style:"margin-left: 20px" %>
         <%# <a class="nav-link" style="margin-left: 20px" href="">Home <span class="sr-only">(current)</span></a> %>
       </li>
       <li class="nav-item">
-        <%= link_to "Add a Car", new_car_path, class:"nav-link", style:"margin-left: 20px" %>
+        <%= link_to "Add a Car", new_car_path, class:"nav-link css-nav", style:"margin-left: 20px" %>
       </li>
     </ul>
   </div>
@@ -21,22 +21,22 @@
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in?  %>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <a class="nav-link dropdown-toggle css-nav " href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Account Settings
           </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <%= link_to "Edit Account", edit_user_registration_path, class:"dropdown-item"  %>
-          <%= link_to "View profile", profile_path(current_user.id), class:"dropdown-item" %>
+        <div class="dropdown-menu " aria-labelledby="navbarDropdown">
+          <%= link_to "Edit Account", edit_user_registration_path, class:"dropdown-item css-nav"  %>
+          <%= link_to "View profile", profile_path(current_user.id), class:"dropdown-item css-nav" %>
           <div class="dropdown-divider"></div>
-          <%= link_to "Sign out", destroy_user_session_path, class:"dropdown-item", style:"border: none;"  %>
+          <%= link_to "Sign out", destroy_user_session_path, class:"dropdown-item css-nav", style:"border: none;"%>
         </div>
       </li>
       <% else %>
         <li class="nav-item">
-          <%= link_to "Log-in", user_session_path, class:"nav-link"  %>
+          <%= link_to "Log-in", user_session_path, class:"nav-link css-nav btn btn-flat"  %>
         </li>
         <li class="nav-item">
-          <%= link_to "Sign Up", new_user_registration_path, class:"nav-link"  %>
+          <%= link_to "Sign Up", new_user_registration_path, class:"nav-link btn btn-success"  %>
         </li>
       <% end %>
     </ul>

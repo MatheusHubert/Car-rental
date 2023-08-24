@@ -1,4 +1,4 @@
-<section class="jumbotron text-center" >
+<section class="jumbotron text-center " >
   <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= image_url "background-large.jpg" %>');">
     <h1 class= "jumbotron-heading">Search Less. Live More.</h1>
     <p class="lead text-muted">We make finding the right car simple.</p>
@@ -16,10 +16,10 @@
     </div>
   </div>
 
-<div class="container justify-content ">
-  <h1 class= "All-cars">All cars for Rent</h1>
+<div class="container justify-content  ">
+  <h1 class= "All-cars ">All cars for Rent</h1>
 
-  <div class="row bg-white ">
+  <div class="row bg-white index-css ">
       <% @cars.each do |car| %>
         <div class="col-3 my-3 showup">
           <div class="">
@@ -35,7 +35,7 @@
                     <p><b>Capacity:</b> <%= car.seat_number %></p>
                   </div>
                 </div>
-                <%= link_to "See Offer", car_path(car.id), class:"btn-config btn button-62" %>
+                <%= link_to "See Offer", car_path(car.id), class:"btn-success btn button-62" %>
             </div>
           </div>
         </div>
