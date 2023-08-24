@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  before_action :set_booking, only: %I[show]
+  before_action :set_booking, only: %I[show destroy]
 
   def index
     @bookings = Booking.all
@@ -17,13 +17,17 @@ class BookingsController < ApplicationController
     @booking.car = @car
 
     if @booking.save
-      redirect_to new_car_booking_path
+      redirect_to new_car_booking_path, notice: "Booking was successfully created!"
     else
       render :new, status: :unprocessable_entity
     end
   end
 
-  def show
+  def show; end
+
+  def destroy
+    @booking.destroy
+    redirect_to profile_bookings_path(current_user.id)
   end
 
   private

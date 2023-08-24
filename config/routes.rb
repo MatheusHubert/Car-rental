@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   resources :cars, except: %I[index] do
     resources :bookings, only: %I[new create]
   end
-  resources :bookings, only: %I[show index]
+  resources :bookings, only: %I[show index destroy]
 
   resources :profiles, only: %I[show destroy] do
     get "/cars", to: "profiles#cars", as: :cars

@@ -1,1 +1,108 @@
 // Specific CSS for your home-page
+.jumbotron-heading {
+  font-weight: 600;
+}
+
+.h1 {
+  font-size: 2.5rem;
+}
+
+.lead {
+  font-size: 1.25rem;
+  font-weight: 300;
+  text-align: center;
+}
+
+.jumbotron {
+  padding-top: 50px;
+  padding-bottom: 30px;
+}
+
+.banner {
+  background-size: cover;
+  background-position: center;
+  padding: 150px 0;
+}
+
+.banner h1 {
+  margin: 0;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+  font-size: 32px;
+  font-weight: bold;
+
+}
+
+.banner p {
+  font-size: 20px;
+  color: white;
+  opacity: .7;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.btn-flat {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: #670BFF;
+}
+
+
+.All-cars {
+  color: black;
+  font-size: 32px;
+  padding-top: 10px;
+
+}
+
+.carousel {
+  margin-top: 10px;
+}
+
+.showup{
+  border-radius: 10px;
+}
+.showup :hover{
+}
+
+.img-config{
+  border-radius: 10px;
+  box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(39, 37, 173, 0.5), .125rem .125rem 1rem rgba(84, 143, 232, 0.5);
+}
+
+
+.btn-config {
+  border-radius: 10px;
+}
+
+
+/* CSS */
+.button-62 {
+  background: linear-gradient(to bottom right, #5b47ef, #5a60ff);
+  border: 0;
+  border-radius: 12px;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system,system-ui,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 2.5;
+  outline: transparent;
+  padding: 0 1rem;
+  text-align: center;
+  text-decoration: none;
+  transition: box-shadow .2s ease-in-out;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+}
+
+.button-62:not([disabled]):focus {
+  box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(39, 37, 173, 0.5), .125rem .125rem 1rem rgba(84, 143, 232, 0.5);
+}
+
+.button-62:not([disabled]):hover {
+  box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(39, 37, 173, 0.5), .125rem .125rem 1rem rgba(84, 143, 232, 0.5);
+}
