@@ -1,93 +1,42 @@
-<%# <section> %>
- <%# <div class="container account-box"> %>
-    <%# <div class="row align-self-start"> %>
-    <%# <div class="col order-last"> %>
-        <%# <div class="card"> %>
-    <%# <div class="card-header"> %>
-    <%# <strong>Total cars</strong> %>
-    <%# </div> %>
-    <%# <div class="card-body"> %>
-    <%# <h5 class="card-title"><p><%= current_user.cars.count %><%#</p></h5> %>
-    <%# </div> %>
-    <%# </div> %>
-<%# </div> %>
-
-  <%# <div class="col"> %>
-      <%# <div class="card"> %>
-    <%# <div class="card-header"> %>
-    <%# <strong>Account details</strong> %>
-    <%# </div> %>
-    <%# <div class="card-body"> %>
-    <%# <h5 class="card-title"><%= link_to "Scheduled bookings", profile_bookings_path(current_user.id), class:" btn btn-primary btn-small mt5 view-b "%><%# %>
-      <%# <%= link_to "View cars" , profile_cars_path(current_user.id), class:"view-b col btn btn-primary btn-small mt5" %><%#</h5> %>
-    <%# </div> %>
-    <%# </div> %>
-  <%# </div> %>
-
-<%# <div class="col order-first"> %>
-    <%# <div class="col order-last"> %>
-    <%# <div class="card"> %>
-    <%# <div class="card-header"> %>
-    <%# <strong>My prfile</strong> %>
-     <%# </div> %>
-  <%# <div class="card-body"> %>
-    <%# <h5 class="card-title"> <p>Email: <%= current_user.email %><%#</p></h5> %>
-  <%# </div> %>
-  <%# </div> %>
-<%# </div> %>
-
-
-<%# </section> %>
-
 <div>
   <h1 class="text-center mt-3"><%= current_user.first_name %> <%= current_user.last_name %>'s profile</h1>
   <div class="row justify-content-center">
-    <div class="col-5 showsmallcards">
+    <div class="col-10 showsmallcards">
       <h2 class="text-center">Account Details</h2>
-      <p><strong>Email:</strong> <%= current_user.email %></p>
-      <p><strong># of bookings:</strong> <%= current_user.bookings.count %></p>
-      <p><strong># of cars:</strong><%= current_user.cars.count %></p>
-      <%# <p><strong># of planned rentals:</strong><%= current_user.cars.bookings.count %><%#</p> %>
+      <div class="d-flex justify-content-around">
+        <p><strong>Email:</strong> <%= current_user.email %></p>
+        <p><strong>Number of bookings:</strong> <%= current_user.bookings.count %></p>
+        <p><strong>Number of cars:</strong><%= current_user.cars.count %></p>
+      </div>
     </div>
 
-    <div class="col-6 showsmallcards">
+    <div class="col-10 showsmallcards">
       <h2 class="text-center"><%= link_to "My Cars", profile_cars_path(current_user.id), class:"text-decoration-none text-reset"%></h2>
-        <div class="bigcards justify-content-around">
-          <% current_user.cars.first(2).each do |car| %>
-            <div class="showsmallcards">
-              <%= cl_image_tag car.photos.first.key, height: 180, width: 280, crop: :fill, class:"carimage"%>
-              <p><strong><%= car.model %></strong></p>
-              <div class="cardtext">
-                <p class="cardprice"><b>Price:</b> €<%= car.price %></p>
-                <p><b>Capacity:</b> <%= car.seat_number %></p>
-              </div>
-            </div>
-          <% end %>
-      </div>
+        <% if current_user.cars.first != nil%>
+          <div class="bigcards justify-content-around">
+              <% current_user.cars.first(2).each do |car| %>
+                <div class="showsmallcards">
+                  <%= cl_image_tag car.photos.first.key, height: 180, width: 280, crop: :fill, class:"carimage"%>
+                  <p><strong><%= car.model %></strong></p>
+                  <div class="cardtext">
+                    <p class="cardprice"><b>Price:</b> €<%= car.price %></p>
+                    <p><b>Capacity:</b> <%= car.seat_number %></p>
+                  </div>
+                </div>
+              <% end %>
+          </div>
+        <% else %>
+          <div class="d-flex justify-content-center">
+            <p class="text-center">You currently haven't registered a car</p>
+          </div>
+        <% end %>
     </div>
 
-    <div class="col-11 showsmallcards">
+    <div class="col-10 showsmallcards">
       <h2 class="text-center"><%= link_to "Cars booked by me", profile_bookings_path(current_user.id), class:"text-decoration-none text-reset"%></h2>
-        <div class="showbigcards d-flex justify-content-around">
-          <% current_user.bookings.first(4).each do |booking| %>
-            <div class="showsmallcards">
-              <%= cl_image_tag booking.car.photos.first.key, height: 180, width: 280, crop: :fill, class:"carimage"%>
-              <p><strong><%= booking.car.model %></strong></p>
-              <div class="cardtext">
-                <p class="cardprice"><b>Price:</b> €<%= booking.car.price %></p>
-                <p><b>Capacity:</b> <%= booking.car.seat_number %></p>
-              </div>
-            </div>
-          <% end %>
-      </div>
-    </div>
-
-    <div class="col-11 showsmallcards">
-      <h2 class="text-center"><%= link_to "My cars booked by other users", profile_cars_path(current_user.id), class:"text-decoration-none text-reset"%></h2>
-      <div class="bigcards justify-content-around">
-        <% if current_user.cars.first.bookings.first != nil %>
-          <% current_user.cars.first(4).each do |car| %>
-            <% car.bookings.first(4).each do |booking| %>
+        <% if current_user.bookings.first != nil %>
+          <div class="showbigcards d-flex justify-content-around">
+            <% current_user.bookings.first(2).each do |booking| %>
               <div class="showsmallcards">
                 <%= cl_image_tag booking.car.photos.first.key, height: 180, width: 280, crop: :fill, class:"carimage"%>
                 <p><strong><%= booking.car.model %></strong></p>
@@ -97,11 +46,38 @@
                 </div>
               </div>
             <% end %>
+          </div>
+        <% else %>
+          <div class="d-flex justify-content-center">
+            <p> You don't have any booked cars</p>
+          </div>
+        <% end %>
+    </div>
+
+    <div class="col-10 showsmallcards">
+      <h2 class="text-center">My cars booked by other users</h2>
+        <% if current_user.cars.first != nil %>
+          <% if current_user.cars.first.bookings.first != nil %>
+            <div class="bigcards justify-content-around">
+              <% current_user.cars.first(2).each do |car| %>
+                <% car.bookings.first(2).each do |booking| %>
+                  <div class="showsmallcards">
+                      <%= cl_image_tag booking.car.photos.first.key, height: 180, width: 280, crop: :fill, class:"carimage"%>
+                    <p><strong><%= booking.car.model %></strong></p>
+                    <div class="cardtext">
+                      <p class="cardprice"><b>Price:</b> €<%= booking.car.price %></p>
+                      <p><b>Capacity:</b> <%= booking.car.seat_number %></p>
+                    </div>
+                  </div>
+                <% end %>
+              <% end %>
+            </div>
           <% end %>
         <% else %>
-         <p class="text-center">None of your cars currently have bookings</p>
+          <div class="d-flex justify-content-center">
+            <p class="text-center">None of your cars currently have bookings</p>
+          </div>
         <% end %>
-      </div>
     </div>
   </div>
 </div>

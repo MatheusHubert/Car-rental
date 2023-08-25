@@ -1,34 +1,24 @@
-<div class="container p-3">
-  <h1 class="text-center mt-3">All <%= current_user.first_name %>'s cars</h1>
-
-  <div class="container justify-content">
-    <div class="row">
+<section>
+  <div class="cardpage">
+    <h1 class="texttitle text-center">All <%= current_user.first_name %>'s cars</h1>
+    <div class="showbigcards">
       <% @cars.each do |car| %>
-        <div class="col-3 my-3">
-          <div class="card-body shadow-lg p-3 mb-5 bg-white rounded">
-            <div class="card text-center">
-
-            <%= cl_image_tag car.photos.first.key, height: 180, width: 280, crop: :fill, class:"img-thumbnail  mx-auto w-100 mb-3" %>
-
-              <p ><strong><%= car.model %></strong></p>
-              <div class= " d-flex justify-content-between"> </div>
-
-              <strong>Price:</strong>
-              <%= car.price %>
-              <strong>Capacity:</strong>
-              <%= car.seat_number %>
-              <%= link_to "View", car_path(car.id), class:"btn btn-success"%>
-              <%= link_to "Edit", edit_car_path(car.id), class:"btn btn-primary" %>
-              <%= link_to "Delete",
-                profile_path(car.id),
-                data: {turbo_method: :delete, turbo_confirm: "Are you sure?"},
-                class:"btn btn-danger"
-              %>
-            </div>
+        <div class="showsmallcards">
+          <%= cl_image_tag car.photos.first.key, height: 180, width: 280, crop: :fill, class:"carimage"%>
+          <p><strong><%= car.model %></strong></p>
+          <div class="cardtext">
+            <p class="cardprice"><b>Price:</b> €<%= car.price %></p>
+            <p><b>Capacity:</b> <%= car.seat_number %></p>
           </div>
+          <%= link_to "See Offer", car_path(car.id), class:"button-2" %>
+          <%= link_to "Edit", edit_car_path(car.id), class:"button-2" %>
+          <%= link_to "Delete",
+            profile_path(car.id),
+            data: {turbo_method: :delete, turbo_confirm: "Are you sure?"},
+            class:"button-3"
+          %>
         </div>
       <% end %>
-    </div>
+    <div>
   </div>
-</div>
-
+</section>
