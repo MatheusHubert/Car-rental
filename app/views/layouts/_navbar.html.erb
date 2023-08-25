@@ -1,5 +1,5 @@
-  <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light d-flex justify-content-between">
-  <a class="navbar-brandcss-nav " style="margin-left: 20px" href="">SmartRBnB</a>
+  <nav class="cardpage navbar sticky-top navbar-expand-lg navbar-light bg-light d-flex justify-content-between">
+  <p class="navbar-brandcss-nav" style="margin: 10px">SmartRBnB</p>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -9,10 +9,6 @@
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
         <%= link_to "Home", root_path, class:"nav-link css-nav", style:"margin-left: 20px" %>
-        <%# <a class="nav-link" style="margin-left: 20px" href="">Home <span class="sr-only">(current)</span></a> %>
-      </li>
-      <li class="nav-item">
-        <%= link_to "Add a Car", new_car_path, class:"nav-link css-nav", style:"margin-left: 20px" %>
       </li>
     </ul>
   </div>
@@ -25,6 +21,7 @@
             Account Settings
           </a>
         <div class="dropdown-menu " aria-labelledby="navbarDropdown">
+          <%= link_to "Add a Car", new_car_path, class:"dropdown-item css-nav " %>
           <%= link_to "Edit Account", edit_user_registration_path, class:"dropdown-item css-nav"  %>
           <%= link_to "View profile", profile_path(current_user.id), class:"dropdown-item css-nav" %>
           <div class="dropdown-divider"></div>
@@ -33,10 +30,10 @@
       </li>
       <% else %>
         <li class="nav-item">
-          <%= link_to "Log-in", user_session_path, class:"nav-link css-nav btn btn-flat"  %>
+          <%= link_to "Log-in", user_session_path, class:"nav-link css-nav"  %>
         </li>
         <li class="nav-item">
-          <%= link_to "Sign Up", new_user_registration_path, class:"nav-link btn btn-success"  %>
+          <%= link_to "Sign Up", new_user_registration_path, class:"nav-link"%>
         </li>
       <% end %>
     </ul>
