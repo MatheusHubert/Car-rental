@@ -52,7 +52,7 @@
 
     <div class="col-6 showsmallcards">
       <h2 class="text-center"><%= link_to "My Cars", profile_cars_path(current_user.id), class:"text-decoration-none text-reset"%></h2>
-        <div class="bigcards">
+        <div class="bigcards justify-content-around">
           <% current_user.cars.first(2).each do |car| %>
             <div class="showsmallcards">
               <%= cl_image_tag car.photos.first.key, height: 180, width: 280, crop: :fill, class:"carimage"%>
@@ -68,7 +68,7 @@
 
     <div class="col-11 showsmallcards">
       <h2 class="text-center"><%= link_to "Cars booked by me", profile_bookings_path(current_user.id), class:"text-decoration-none text-reset"%></h2>
-        <div class="showbigcards d-flex justify-content-between">
+        <div class="showbigcards d-flex justify-content-around">
           <% current_user.bookings.first(4).each do |booking| %>
             <div class="showsmallcards">
               <%= cl_image_tag booking.car.photos.first.key, height: 180, width: 280, crop: :fill, class:"carimage"%>
@@ -84,8 +84,8 @@
 
     <div class="col-11 showsmallcards">
       <h2 class="text-center"><%= link_to "My cars booked by other users", profile_cars_path(current_user.id), class:"text-decoration-none text-reset"%></h2>
+      <div class="bigcards justify-content-around">
         <% if current_user.cars.first.bookings.first != nil %>
-        <div class="bigcards">
           <% current_user.cars.first(4).each do |car| %>
             <% car.bookings.first(4).each do |booking| %>
               <div class="showsmallcards">
