@@ -22,8 +22,8 @@ class CarsController < ApplicationController
 
   def show
     @markers = [{
-        lat: @car.latitude,
-        lng: @car.longitude
+              lat: @car.latitude,
+              lng: @car.longitude
     }]
   end
 
@@ -46,7 +46,7 @@ class CarsController < ApplicationController
   end
 
   def car_params
-    params.require(:car).permit(:model, :price, :seat_number, :address, :description, photos: [])
+    params.require(:car).permit(:model, :price, :seat_number, :address, :description, :latitude, :longitude, photos: [])
   end
 
   def update_car_params
