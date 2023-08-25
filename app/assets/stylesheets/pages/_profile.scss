@@ -4,3 +4,22 @@
     margin-left: 60px;
     margin-right: 60px;
 }
+
+.button-prifile-car{
+  padding-top: 40px;
+  display:flex;
+  justify-content: space-around;
+}
+
+.booking-text{
+  display: grid;
+  grid-template-rows: auto auto auto auto;
+  padding-bottom: 30px;
+  padding-top: 30px;
+  text-align: center;
+}
+
+.button-my-bookings{
+  display: flex;
+  justify-content: space-around;
+}
