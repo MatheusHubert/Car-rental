@@ -33,7 +33,7 @@
   justify-content: space-between;
   align-items: center;
   background: white;
-  box-shadow: 0 0 8px rgba(0,0,0,0.2);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
   margin: 8px;
 }
@@ -48,4 +48,19 @@
 
 .flash-danger {
   border: 2px solid #FD1015;
+}
+
+
+.resize-css {
+  width: 150%;
+  margin: calc(10%/6);
+}
+
+
+.modela-css {
+  margin-top: 20px;
+}
+
+.description-css {
+  text-align: center;
 }
