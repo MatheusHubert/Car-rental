@@ -1,18 +1,21 @@
+<div>
 <%= simple_form_for(car) do |f| %>
   <%= f.input :model %>
   <%= f.input :price %>
   <%= f.input :seat_number %>
   <%= f.input :address %>
-  <%= f.input :description, :as => :text, :input_html => { 'rows' => 7}  %>
+  <%= f.input :description, :as => :text, :input_html => { 'rows' => 7} %>
   <% if car.persisted? %>
-  <%= f.input :photos, as: :file,
-          input_html: { multiple: true },
+    <%= f.input :photos, as: :file,
+          input_html: { class:"button-2", multiple: true },
           hint:"Don't upload if you aren't adding photos",
           required: false %>
-  <% else %>
-    <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+    <% else %>
+      <%= f.input :photos, as: :file, input_html: { multiple: true } %>
   <% end %>
-  <%= f.submit class:"btn btn-success"%>
 
-
+  <div class="center-button">
+    <%= f.submit class:"button-2"%>
+  </div>
 <% end %>
+</div>
