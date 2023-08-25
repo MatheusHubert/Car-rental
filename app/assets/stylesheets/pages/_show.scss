@@ -1,66 +1,78 @@
-.details {
+.show-tables {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  max-height: 600px;
+  margin: 30px;
+  padding-top:30px;
+  padding: 30px;
+  grid-column-gap: 50px;
+}
+
+.pictures-carousel{
+  border-radius: 3%;
+  overflow: hidden;
+}
+
+.share-save{
   text-align: center;
-  margin: 60px;
+  padding-bottom: 40px;
 }
 
-.container {
-  background-color: white;
-  text-align: center;
+.car-description {
+  padding-top: 20px;
 }
 
-.block-title {
-  justify-content: space-between;
-}
-
-.block-share-save {
-  padding-left: 43px;
-}
-
-.account-box {
-  margin-top: 250px;
-  margin-bottom: 200px;
-}
-
-.welcome-color {
-  background-color: azure;
-}
-
-
-
-.flash {
-  padding: 16px 24px;
+.buttons-show {
+  padding-top: 30px ;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: white;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
-  border-radius: 4px;
-  margin: 8px;
+  justify-content: space-around;
 }
+.map-position {
 
-.flash-success {
-  border: 2px solid #1EDD88;
-}
+  margin:50px;
+  border-radius: 5px;
+  overflow: hidden;
 
-.flash-warning {
-  border: 2px solid #FFC65A;
-}
-
-.flash-danger {
-  border: 2px solid #FD1015;
 }
 
 
-.resize-css {
-  width: 150%;
-  margin: calc(10%/6);
-}
 
+// .details {
+//   text-align: center;
+//   margin: 60px;
+// }
 
-.modela-css {
-  margin-top: 20px;
-}
+// .container {
+//   background-color: white;
+//   text-align: center;
+// }
 
-.description-css {
-  text-align: center;
-}
+// .block-title {
+//   justify-content: space-between;
+// }
+
+// .block-share-save {
+//   padding-left: 43px;
+// }
+
+// .account-box {
+//   margin-top: 250px;
+//   margin-bottom: 200px;
+// }
+
+// .welcome-color {
+//   background-color: azure;
+// }
+
+// .resize-css {
+//   width: 150%;
+//   margin: calc(10%/6);
+// }
+
+// .modela-css {
+//   margin-top: 20px;
+// }
+
+// .description-css {
+//   text-align: center;
+// }
