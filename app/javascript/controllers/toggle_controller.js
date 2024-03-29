@@ -15,14 +15,17 @@ export default class extends Controller {
   setStartDate(e) {
     console.log(e.target.value)
     this.startDate = e.target.value
-
-    this.#setPrice()
+    if (this.startDate && this.endDate) {
+      this.#setPrice()
+    }
   }
 
   setEndDate(e) {
     console.log(e.target.value)
     this.endDate = e.target.value
-    this.#setPrice()
+    if (this.startDate && this.endDate) {
+        this.#setPrice()
+      }
   }
 
   #setPrice() {
@@ -35,7 +38,8 @@ export default class extends Controller {
       let days = (eDate - sDate)/(1000*60*60*24)
       let price = days * this.priceValue
       console.log(price)
-      this.priceTextTarget.innerText = `The price of the booking is €${price}`
+      this.priceTextTarget.classList.remove("d-none")
+      this.priceTextTarget.innerText = `Price: €${price}`
     }
   }
 
